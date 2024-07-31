@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
+
+:root{
+    --primary-color: #333232;
+    --text-color: #ffffff;
+    --secondary-color: #9b12c9;
+} 
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 20px;
+    font-family: 'Ga Maamli', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+    background-color: var(--primary-color);
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.links-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#outsearch{
+    display: none;
+}
+nav a{
+    height: 100%;
+    padding: 0 17px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+nav a:hover{
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+nav svg{
+    fill: var(--secondary-color);
+}
+.close-sidebar-button{
+    display: none;
+}
+.open-sidebar-button{
+    display: none;
+    
+}
+nav .home-link{
+    margin-right: auto;
+}
+#search-bar{
+   flex: 1;
+}
+#search-button{
+    width: 70%;
+    padding: 5px 10px;
+    border: 2px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+   
+    
+}
+#sidebar-active{
+    display: none;
+}
+
+@media  (max-width: 630px){
+    #search-button{
+        width: 100%;
+    }
+    
+}
+@media (max-width: 590px){
+    .links-container{
+        flex-direction: column;
+       align-items: flex-end;
+       position: fixed;
+       top: 0;
+       left: -100%;
+       z-index: 10;
+       width: 250px;
+       background-color: var(--primary-color);
+
+       box-shadow: 10px 0 10px rgba(0,0,0, 0.5) ;
+       transition: 0.5s ease-out;
+    }
+    #outsearch{
+        display: block;
+        display: flex;
+        margin-right: auto;
+        
+        
+    }
+    #outsearch-button{
+        width: 100%;
+        padding: 2px 5px;
+        border: 2px solid var(--secondary-color);
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        
+    }
+    /* nav .home-link{
+        margin-right: 0;
+    } */
+    html{
+        font-size: 30px;
+    }
+    #search-bar{
+        display: none;
+    }
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 20px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button{
+        padding: 10px;
+        display: block;
+        align-self: center;
+        
+    }
+    #sidebar-active:checked ~ .links-container{
+        left: 0;
+    }
+    #sidebar-active:checked ~ #overlay{
+        /* background-color: var(--secondary-color); */
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    
+        
+    
+}
